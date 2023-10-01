@@ -1,0 +1,749 @@
+/*GOOGLE POPPINS FONTS CDN INCLUDE HERE*/
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@100;200;300;400;500;600;700;800&display=swap');
+/*SITE COMMON CSS STARTS FROM HERE*/
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+:root {
+	--text-color: crimson;
+	--text-hover: #bd0b2d;
+	--bg-color: #0d0d0d;
+	--paragraph-color: #aaa;
+	--box-bg: #1a1a1a;
+	--white-color: #fff;
+}
+
+body {
+	font-family: 'Nunito', sans-serif;
+	font-size: 17px;
+	color: var(--white-color);
+	background-color: var(--bg-color);
+}
+
+html {
+	font-size: 62.5%;
+	overflow-x: hidden;
+	scroll-padding-top: 7rem;
+	scroll-behavior: smooth;
+}
+
+html::-webkit-scrollbar {
+	width: 0.8rem;
+}
+
+html::-webkit-scrollbar-track {
+	background: transparent;
+}
+
+html::-webkit-scrollbar-thumb {
+	background: var(--text-color);
+	border-radius: 5rem;
+}
+
+.container_wrapper {
+	width: 80%;
+	margin: auto;
+}
+/**********************************
+Header section css starts from here
+***********************************/
+.header {
+	position: fixed;
+	bottom: 0px;
+	width: 100%;
+	background-color: var(--box-bg);
+}
+
+header .header nav .navenus {
+	display: flex;
+	justify-content: space-between;
+}
+
+header .header nav .navenus a {
+	text-align: center;
+	text-decoration: none;
+	color: var(--text-color);
+	font-size: 20px;
+	font-weight: 400;
+	padding: 20px 50px;
+}
+
+header .header nav .navenus a:hover {
+	background-color: var(--text-color);
+	transition: 0.3s;
+	color: var(--white-color);
+}
+
+.navenus span.routeName {
+	color: var(--white-color);
+}
+
+/**********************************
+Home section css starts from here
+***********************************/
+
+.flex_layout {
+	display: flex;
+	align-items: center;
+	justify-items: space-between;
+	gap: 15;
+}
+
+.grid_layout {
+	display: grid;
+	gap: 15;
+	grid-template-columns: repeat(2, 1fr);
+}
+
+section.section .sectionWrapper {
+	/* width: 100%; */
+	height: auto;
+	padding: 7% 0%;
+}
+
+.myImage img.profilePic {
+	width: 320px;
+	height: 320px;
+	object-fit: cover;
+	border-radius: 100%;
+}
+
+.themeDetails h1.nameHeading {
+	font-size: 30px;
+	font-weight: 800;
+	color: var(--white-color);
+	margin-bottom: 5px;
+}
+
+.themeDetails h3.specialitis {
+	font-size: 20px;
+	font-weight: 600;
+	color: var(--text-color);
+	margin-bottom: 5px;
+}
+
+.themeDetails p.shortDesc {
+	color: var(--paragraph-color);
+	margin-bottom: 20px;
+	font-size: 17px;
+}
+
+.regularBtn {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 10px 20px;
+	border: navajowhite;
+	border-radius: 35px;
+	color: var(--white-color);
+	background-color: var(--text-color);
+	outline: none;
+	font-size: 18px;
+	text-decoration: none;
+}
+
+.regularBtn .icon {
+	margin-left: 5px;
+}
+
+.regularBtn:hover {
+	background-color: var(--text-hover);
+	transition: 0.3s;
+	color: var(--white-color);
+}
+
+.regularBtn:hover .icon {
+	margin-left: 10px;
+	transition: 0.3s;
+}
+
+/***************************************
+ About us section css starts from here
+ **************************************/
+
+.sectionName {
+	text-align: center;
+	margin-bottom: 40px;
+}
+
+.inDetail {
+	margin: 70px 0px;
+}
+
+.onDetail {
+	margin: -40px 0px 50px 0px;
+}
+
+.sectionName h1.sectionTitle {
+	font-size: 70px;
+	font-weight: 700;
+	letter-spacing: 2px;
+}
+
+.sectionName h1.sectionTitle span.highlight {
+	color: var(--text-color);
+}
+
+.featureBoxes {
+	display: grid;
+	width: 50%;
+	grid-template-columns: repeat(2, 1fr);
+}
+
+.featureBoxes .box {
+	width: 85%;
+	background-color: var(--box-bg);
+	border-radius: 10px;
+	margin-bottom: 25px;
+	padding: 20px;
+}
+
+.featureBoxes .box:hover {
+	background-color: var(--text-color);
+	color: var(--white-color);
+	transition: 0.3s;
+}
+
+.featureBoxes .box span.boxIcon {
+	color: var(--text-color);
+	font-size: 30px;
+	position: relative;
+	background: var(--white-color);
+	left: -45px;
+	padding: 5px 10px;
+	border-radius: 40px;
+	display: flex;
+	align-items: center;
+	width: 50px;
+	height: 50px;
+}
+div.boxIcon {
+	color: var(--text-color);
+	font-size: 30px;
+	background: var(--white-color);
+	padding: 5px 10px;
+	border-radius: 40px;
+	display: flex;
+	cursor: pointer;
+	align-items: center;
+	width: 50px;
+	height: 50px;
+	margin-right: 10px;
+}
+
+.featureBoxes .box:hover span.boxIcon i {
+	animation: rotation 0.5s linear;
+}
+
+@keyframes rotation {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(359deg);
+	}
+}
+
+.featureBoxes .box h2.countNo {
+	font-size: 35px;
+	font-weight: 700;
+	color: var(--text-color);
+	margin-top: 15px;
+}
+
+.featureBoxes .box:hover h2.countNo {
+	color: var(--white-color);
+}
+
+.featureBoxes .box span.featureName {
+	font-size: 18px;
+	font-weight: 500;
+	color: var(--paragraph-color);
+}
+
+.featureBoxes .box:hover span.featureName {
+	color: var(--white-color);
+}
+
+span.specialitis {
+	color: var(--white-color);
+	font-size: 30px;
+	font-weight: 500;
+}
+
+/* skill css */
+
+.skillBox {
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+}
+
+.skillBox .box {
+	text-align: center;
+	border-radius: 10px;
+	background: var(--box-bg);
+	padding: 30px 15px;
+	margin: 15px 10px;
+}
+
+.skillBox .box:hover {
+	background-color: var(--white-color);
+	transition: 0.3s;
+	color: black;
+}
+
+.skillBox .box img {
+	width: 50%;
+	height: 80px;
+	margin-bottom: 15px;
+}
+
+.skillBox .box span.skillName {
+	font-size: 22px;
+	text-transform: uppercase;
+	font-weight: 500;
+}
+
+/*************************************
+ Projects section css starts from here
+ *************************************/
+.projectsBox {
+	position: relative;
+}
+
+.projectsBox .projectThumbnail {
+	width: 100%;
+	border: 1rem solid #0d0d0d;
+	box-shadow: 0.4rem 0.4rem 1rem #000, -0.4rem -0.4rem 1rem #000;
+	border-radius: 10px;
+	height: 250px;
+	cursor: pointer;
+}
+
+.projectsBox .projectThumbnail img {
+	width: 100%;
+	height: 100%;
+}
+
+.projectsBox .projectInfo {
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding: 13% 5%;
+	text-align: center;
+	height: 100%;
+	width: 100%;
+	background: var(--bg-color);
+	place-items: center;
+	display: none;
+}
+
+.projectsBox .projectInfo h3.projectCountNo {
+	font-size: 30px;
+	font-weight: 600;
+	margin-bottom: 20px;
+}
+
+.projectsBox .projectInfo span.projectType {
+	font-size: 25px;
+	font-weight: 500;
+}
+
+.projectsBox .projectInfo .btns {
+	margin-top: 20px;
+	display: flex;
+	justify-content: space-around;
+}
+
+.projectsBox:hover .projectInfo {
+	display: block;
+	transition: 0.3s;
+}
+
+/************************************
+ Blog section css starts from here
+ ************************************/
+
+.blogsBox {
+	width: 100%;
+	height: 100%;
+	background: #0d0d0d;
+	box-shadow: 0.4rem 0.4rem 1rem #000, -0.4rem -0.4rem 1rem #000;
+	border-radius: 10px;
+}
+
+.blogsBox .blogThumbnail {
+	width: 100%;
+	height: 250px;
+}
+
+.blogsBox .blogThumbnail img {
+	width: 100%;
+	height: 100%;
+	border-radius: 10px;
+	border-bottom-left-radius: 0px;
+	border-bottom-right-radius: 0px;
+}
+
+.blogsBox .blogDet {
+	margin-top: 20px;
+	padding: 0px 10px 20px 10px;
+}
+
+.blogsBox .blogDet h3.blogHeading {
+	font-size: 30px;
+	font-weight: 700;
+	margin-bottom: -10px;
+	color: var(--text-color);
+}
+
+.blogsBox .blogDet p.shortDesc {
+	color: var(--paragraph-color);
+	font-size: 16px;
+	margin: 20px 0px;
+}
+
+/*************************************
+Contact section css starts from here
+**************************************/
+#inputField {
+	padding: 10px 10px;
+	margin: 10px 0px;
+	border-radius: 5px;
+	border: none;
+	width: 100%;
+	outline: none;
+	font-size: 18px;
+}
+
+#inputField2 {
+	padding: 10px 10px;
+	border-radius: 5px;
+	border: none;
+	width: 48%;
+	margin: 1% 1%;
+	outline: none;
+	font-size: 18px;
+}
+
+/* Loader css */
+.loader {
+	font-size: 90px;
+	text-align: center;
+	margin: auto;
+	width: 45px;
+	height: 45px;
+}
+
+button#disabledBtn {
+	background-color: rgba(156, 9, 39, 0.739);
+}
+
+.loaderGif {
+	text-align: center;
+}
+
+.boxContact {
+	display: flex;
+	background: var(--box-bg);
+	margin: 10px 0px;
+	padding: 15px 10px;
+	/* box-shadow: var(--box-shadow); */
+	align-items: center;
+}
+
+.boxContact {
+	display: flex;
+	background: var(--box-bg);
+	margin: 10px 0px;
+	padding: 15px 10px;
+	/* box-shadow: var(--box-shadow); */
+	align-items: center;
+}
+
+.contactInfop {
+	/* width: 50%; */
+	display: grid;
+	grid-template-columns: repeat(1, 1fr);
+}
+
+.icon i {
+	color: crimson;
+	font-size: 30px;
+	margin: 0px 15px;
+}
+
+span.addressField {
+	font-size: 22px;
+	font-weight: 500;
+	color: crimson;
+}
+
+.socialIcons span.socialIcon i {
+	background: crimson;
+	padding: 15px;
+	cursor: pointer;
+	margin: 0px 5px;
+	border-radius: 100px;
+	font-size: 25px;
+}
+/*******************************
+Single project view modal css 
+*******************************/
+.modal-content {
+	background-color: var(--bg-color);
+}
+
+.projectImageSlider {
+	height: 300px;
+	border: 1rem solid #0d0d0d;
+	box-shadow: 0.4rem 0.4rem 1rem #000, -0.4rem -0.4rem 1rem #000;
+}
+
+img.d-block.w-100 {
+	height: 280px;
+}
+
+.projectDetails h3.specialitis {
+	font-size: 30px;
+	font-weight: 700;
+	letter-spacing: 1px;
+}
+
+.projectDetails h3.nameOfAr {
+	font-size: 22px;
+	font-weight: 500;
+	letter-spacing: 1px;
+	margin-top: 10px;
+}
+
+.projectDetails p.shortDesc {
+	color: var(--paragraph-color);
+	font-size: 16px;
+}
+
+.projectDetails .skillTags {
+	display: flex;
+	justify-content: left;
+	margin: 10px 0px 15px 0px;
+}
+
+.projectDetails .skillTags span.skillTag {
+	background: var(--box-bg);
+	margin: 0px 5px;
+	padding: 2px 20px;
+	border-radius: 10px;
+	text-transform: uppercase;
+	font-size: 16px;
+	color: var(--text-color);
+	font-weight: 600;
+}
+
+.myImage {
+	text-align: center;
+}
+
+/********************************
+Responsive css starts from here 
+*********************************/
+
+@media (min-width: 576px) {
+	.modal-dialog {
+		max-width: 90% !important;
+		position: relative;
+		top: 10%;
+	}
+}
+
+@media (max-width: 992px) {
+	header .header nav .navenus a {
+		padding: 10px;
+	}
+
+	header .header nav .navenus {
+		padding: 0% 5%;
+		display: flex;
+		justify-content: space-between;
+	}
+
+	span.routeName {
+		display: none;
+	}
+
+	.sectionName h1.sectionTitle {
+		font-size: 60px;
+		margin-top: 30px;
+	}
+
+	.featureBoxes .box {
+		width: 90%;
+	}
+
+	.featureBoxes .box span.boxIcon {
+		font-size: 20px;
+		left: -35px;
+		padding: 5px 8px;
+	}
+
+	span.specialitis {
+		font-size: 20px;
+	}
+
+	.skillBox .box span.skillName {
+		font-size: 16px;
+		text-transform: uppercase;
+		font-weight: 500;
+	}
+
+	.projectsBox .projectInfo span.projectType {
+		font-size: 15px;
+	}
+
+	.regularBtn {
+		padding: 5px 15px;
+		border: navajowhite;
+		border-radius: 35px;
+		color: var(--white-color);
+		background-color: var(--text-color);
+		outline: none;
+		font-size: 12px;
+		text-decoration: none;
+	}
+
+	.projectsBox .projectThumbnail {
+		height: 200px;
+	}
+
+	.blogsBox .blogDet h3.blogHeading {
+		font-size: 18px;
+	}
+}
+
+@media (max-width: 768px) {
+	.regularBtn {
+		padding: 10px 20px;
+		border: navajowhite;
+		border-radius: 35px;
+		color: var(--white-color);
+		background-color: var(--text-color);
+		outline: none;
+		font-size: 20px;
+		text-decoration: none;
+	}
+
+	.projectsBox .projectThumbnail {
+		height: 250px;
+	}
+
+	.projectsBox .projectInfo span.projectType {
+		font-size: 22px;
+	}
+
+	section.section .sectionWrapper {
+		padding: 7% 0% 13% 0%;
+	}
+
+	.themeDetails {
+		padding: 0px 10px;
+	}
+
+	.featureBoxes {
+		padding: 0% 3%;
+	}
+
+	.skillBox {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+	}
+
+	.blogsBox .blogDet h3.blogHeading {
+		font-size: 30px;
+		font-weight: 700;
+		margin-bottom: -10px;
+		color: var(--text-color);
+	}
+
+	input#inputField2,
+	textarea#inputField2 {
+		width: 100%;
+		margin: 1% 0%;
+	}
+}
+
+@media (max-width: 425px) {
+	header .header nav .navenus {
+		padding-left: 5%;
+		display: flex;
+		justify-content: space-between;
+	}
+
+	.myImage {
+		text-align: center;
+	}
+
+	.myImage img.profilePic {
+		width: 80%;
+		height: 320px;
+		border-radius: 100%;
+	}
+
+	section.section .sectionWrapper {
+		padding: 7% 0% 20% 0%;
+	}
+
+	.themeDetails h1.nameHeading {
+		margin-bottom: 15px;
+	}
+
+	.themeDetails h3.specialitis {
+		margin-bottom: 15px;
+	}
+
+	.skillBox {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	.themeDetails h1.nameHeading {
+		font-size: 40px;
+		font-weight: 700;
+		color: var(--white-color);
+		margin-bottom: 20px;
+	}
+
+	.featureBoxes .box span.boxIcon {
+		font-size: 20px;
+		left: -10px;
+		padding: 5px 8px;
+		top: -40px;
+	}
+
+	.featureBoxes .box {
+		width: 95%;
+		margin: 20px 0px;
+	}
+
+	.featureBoxes {
+		padding: 0% 0%;
+	}
+
+	.sectionName h1.sectionTitle {
+		font-size: 50px;
+		margin-top: 30px;
+	}
+
+	.regularBtn {
+		padding: 10px 20px;
+		border: navajowhite;
+		border-radius: 35px;
+		color: var(--white-color);
+		background-color: var(--text-color);
+		outline: none;
+		font-size: 17px;
+		text-decoration: none;
+	}
+}
