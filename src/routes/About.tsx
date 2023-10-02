@@ -36,7 +36,7 @@ const About = () => {
 	useAnimation();
 
 	return (
-		<div>
+		<div id='about_us'>
 			<div className='onDetail'>
 				<div className='sectionName'>
 					<h1 className='sectionTitle'>
@@ -184,6 +184,10 @@ const About = () => {
 								<img src={MONGODB} alt='skillImage' /> <br />
 								<span className='skillName'>mongodb</span>
 							</div>
+							<div className='box' data-aos='flip-right'>
+								<img src={gql} alt='skillImage' /> <br />
+								<span className='skillName'>graphql</span>
+							</div>
 							<div className='box' data-aos='flip-left'>
 								<img src={MYSQL} alt='skillImage' /> <br />
 								<span className='skillName'>mysql</span>
@@ -215,10 +219,6 @@ const About = () => {
 							<div className='box' data-aos='flip-right'>
 								<img src={NETLIFY} alt='skillImage' /> <br />
 								<span className='skillName'>netlify</span>
-							</div>
-							<div className='box' data-aos='flip-right'>
-								<img src={gql} alt='skillImage' /> <br />
-								<span className='skillName'>graphql</span>
 							</div>
 							<div className='box' data-aos='flip-right'>
 								<img src={vercel} alt='skillImage' /> <br />

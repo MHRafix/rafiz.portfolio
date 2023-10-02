@@ -19,7 +19,7 @@ const Projects = () => {
 	let no = 1;
 
 	return (
-		<Box>
+		<Box id='projects'>
 			<div className='onDetail'>
 				<div className='sectionName'>
 					<h1 className='sectionTitle'>

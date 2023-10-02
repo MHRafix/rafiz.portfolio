@@ -51,6 +51,19 @@ html::-webkit-scrollbar-thumb {
 /**********************************
 Header section css starts from here
 ***********************************/
+
+.navLink {
+	color: white;
+	cursor: pointer;
+	font-size: 17px;
+	text-decoration: none;
+}
+
+.navLink:hover {
+	color: crimson;
+	transition: 0.3s;
+}
+
 .header {
 	position: fixed;
 	bottom: 0px;
@@ -116,7 +129,7 @@ section.section .sectionWrapper {
 	font-size: 30px;
 	font-weight: 800;
 	color: var(--white-color);
-	margin-bottom: 5px;
+	line-height: 35px;
 }
 
 .themeDetails h3.specialitis {
@@ -612,6 +625,7 @@ Responsive css starts from here
 		outline: none;
 		font-size: 12px;
 		text-decoration: none;
+		cursor: pointer;
 	}
 
 	.projectsBox .projectThumbnail {
@@ -695,14 +709,6 @@ Responsive css starts from here
 		padding: 7% 0% 20% 0%;
 	}
 
-	.themeDetails h1.nameHeading {
-		margin-bottom: 15px;
-	}
-
-	.themeDetails h3.specialitis {
-		margin-bottom: 15px;
-	}
-
 	.skillBox {
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
@@ -712,7 +718,8 @@ Responsive css starts from here
 		font-size: 40px;
 		font-weight: 700;
 		color: var(--white-color);
-		margin-bottom: 20px;
+		line-height: 35px;
+		/* margin-bottom: 20px; */
 	}
 
 	.featureBoxes .box span.boxIcon {

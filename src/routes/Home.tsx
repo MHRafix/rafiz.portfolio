@@ -1,7 +1,13 @@
-import { Box, Group, Space } from '@mantine/core';
+import { Anchor, Box, Group, Space } from '@mantine/core';
 import React from 'react';
 import { HiDownload } from 'react-icons/hi';
-import { SiMongodb, SiNestjs, SiNextdotjs, SiTsnode } from 'react-icons/si';
+import {
+	SiGraphql,
+	SiMongodb,
+	SiNestjs,
+	SiNextdotjs,
+	SiTsnode,
+} from 'react-icons/si';
 import Me from '../Images/me.jpg';
 import useAnimation from '../hooks/useAnimation';
 import useLinkHandle from '../hooks/useLinkHandle';
@@ -17,50 +23,83 @@ const Home = () => {
 	useAnimation();
 
 	return (
-		<Box
-			className='flex_layout'
-			style={{
-				margin: 'auto',
-				width: '90%',
-				height: '100vh',
-			}}
-		>
-			<div className='myImage' data-aos='fade-up'>
-				<img className='profilePic' src={Me} alt='MyProfileImage' />
+		<Box id='home'>
+			<div
+				className='flex_layout'
+				style={{
+					justifyContent: 'center',
+					padding: '25px 0px',
+					gap: 50,
+				}}
+			>
+				<Anchor href='#home' className='navLink'>
+					<div>Home</div>
+				</Anchor>
+				<Anchor href='#about_us' className='navLink'>
+					<div className='navLink'>About</div>
+				</Anchor>
+				<Anchor href='#projects' className='navLink'>
+					<div className='navLink'>Projects</div>
+				</Anchor>
+				<Anchor href='#contact' className='navLink'>
+					<div className='navLink'>Contact</div>
+				</Anchor>
 			</div>
+			<Box
+				className='flex_layout'
+				style={{
+					margin: 'auto',
+					width: '90%',
+					height: '100vh',
+				}}
+			>
+				<div className='myImage' data-aos='fade-up'>
+					<img className='profilePic' src={Me} alt='MyProfileImage' />
+				</div>
 
-			<Space w={60} />
+				<Space w={60} />
 
-			<div className='themeDetails' data-aos='fade-down'>
-				<h3 className='specialitis'>Hey,</h3>
-				<h1 className='nameHeading'>I'm Mehedi H. Rafiz</h1>
-				<h3 className='specialitis'>Full Stack Web Developer</h3>
-				<Group>
-					<div style={getStyle('rgb(238 238 238 / 49%)')}>
-						<SiNextdotjs size={20} color='white' /> &nbsp; NEXT JS
-					</div>
-					<div style={getStyle('rgb(255 239 1 / 45%)')}>
-						<SiTsnode size={20} color='#ffef01' /> &nbsp; TS
-					</div>
-					<div style={getStyle('rgb(175 34 34 / 67%)')}>
-						<SiNestjs size={20} color='red' /> &nbsp; NEST JS
-					</div>
-					<div style={getStyle('rgb(6 252 178 / 40%)')}>
-						<SiMongodb size={20} color='#12B886' /> &nbsp; MONGO DB
-					</div>
-				</Group>
+				<div className='themeDetails' data-aos='fade-down'>
+					<h3 className='specialitis'>Hey,</h3>
+					<h1 className='nameHeading'>I'm Mehedi H. Rafiz</h1>
+					<h3 className='specialitis'>Full Stack Web Developer</h3>
 
-				<Space h={10} />
+					<Space h={'sm'} />
 
-				<p className='shortDesc'>
-					Trying to find a web developer,,,? Look no further, I'm your guy. I'm
-					a professional Full-Stack Web Application Developer.
-				</p>
+					<Group>
+						<div style={getStyle('rgb(238 238 238 / 49%)')}>
+							<SiNextdotjs size={20} color='white' /> &nbsp; NEXT JS
+						</div>
+						<div style={getStyle('rgb(255 239 1 / 45%)')}>
+							<SiTsnode size={20} color='#ffef01' /> &nbsp; TS
+						</div>
+						<div style={getStyle('rgb(175 34 34 / 67%)')}>
+							<SiNestjs size={20} color='crimson' /> &nbsp; NEST JS
+						</div>
+						<div style={getStyle('rgb(175 34 34 / 67%)')}>
+							<SiGraphql size={20} color='crimson' /> &nbsp; GRAPHQL
+						</div>
+						<div style={getStyle('rgb(6 252 178 / 40%)')}>
+							<SiMongodb size={20} color='#12B886' /> &nbsp; MONGO DB
+						</div>
+					</Group>
+					<Space h={'xs'} />
 
-				<button onClick={() => linkHandle(myResumeLink)} className='regularBtn'>
-					Download Resume <HiDownload size={20} className='icon fa' />
-				</button>
-			</div>
+					<Space h={10} />
+
+					<p className='shortDesc'>
+						Trying to find a web developer,,,? Look no further, I'm your guy.
+						I'm a professional Full-Stack Web Application Developer.
+					</p>
+
+					<button
+						onClick={() => linkHandle(myResumeLink)}
+						className='regularBtn'
+					>
+						Download Resume <HiDownload size={20} className='icon fa' />
+					</button>
+				</div>
+			</Box>
 		</Box>
 	);
 };

@@ -1,6 +1,7 @@
 import { Alert, Box, Loader } from '@mantine/core';
 import emailjs from 'emailjs-com';
 import React, { useRef, useState } from 'react';
+import { BiMailSend } from 'react-icons/bi';
 import {
 	FaEnvelope,
 	FaGithub,
@@ -56,7 +57,7 @@ const Contact = () => {
 	useAnimation();
 
 	return (
-		<Box>
+		<Box id='contact'>
 			<div className='onDetail'>
 				<div className='sectionName'>
 					<h1 className='sectionTitle'>
@@ -182,7 +183,7 @@ const Contact = () => {
 								</button>
 							) : (
 								<button type='submit' className='regularBtn'>
-									Send <span className='icon fas fa-paper-plane'></span>
+									Send <BiMailSend className='icon fas' />
 								</button>
 							)}
 						</form>
