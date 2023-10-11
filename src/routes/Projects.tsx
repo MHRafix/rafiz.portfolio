@@ -8,7 +8,7 @@ const Projects = () => {
 
 	useEffect(() => {
 		setGetting(true);
-		fetch('https://rafiz-portfolio-api.vercel.app/projects')
+		fetch('https://rafiz-server.up.railway.app/projects')
 			.then((res) => res.json())
 			.then((data) => {
 				setProjects(data);
