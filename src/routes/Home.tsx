@@ -15,7 +15,7 @@ import useLinkHandle from '../hooks/useLinkHandle';
 const Home = () => {
 	// My Resume Link
 	const myResumeLink =
-		'https://drive.google.com/file/d/1_MctkN8qdhqK55MCXfVvSi2AQ_QzNJYv/view?usp=sharing';
+		'https://drive.google.com/file/d/1w1Lg6XQ7H8RBr49vt0XaleCgL9lgBdSj/view?usp=sharing';
 
 	// Import use link here
 	const { linkHandle } = useLinkHandle();

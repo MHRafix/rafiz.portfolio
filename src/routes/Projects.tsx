@@ -32,7 +32,7 @@ const Projects = () => {
 						<Loader className='loader' color='red' />
 					</div>
 				) : (
-					<div className='flex_layout'>
+					<div className='grid_layout'>
 						{projects.map((project: any) => (
 							<Project key={project._id} project={project} no={no++} />
 						))}
