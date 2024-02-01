@@ -25,11 +25,13 @@ const Home = () => {
 	return (
 		<Box id='home'>
 			<div
-				className='flex_layout'
 				style={{
+					display: 'flex',
+					alignItems: 'center',
 					justifyContent: 'center',
 					padding: '25px 0px',
 					gap: 50,
+					marginBottom: 20,
 				}}
 			>
 				<Anchor href='#home' className='navLink'>
@@ -100,6 +102,8 @@ const Home = () => {
 					</button>
 				</div>
 			</Box>
+
+			<Space h={80} />
 		</Box>
 	);
 };

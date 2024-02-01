@@ -65,14 +65,12 @@ const Contact = () => {
 					</h1>
 				</div>
 				<Box
+					className='grid_layout'
 					style={{
-						display: 'flex',
-						justifyContent: 'space-between',
-						alignItems: 'flex-start',
-						gap: 30,
+						gap: ' 20px',
 					}}
 				>
-					<div className='contactInfop' style={{ width: '50%' }}>
+					<div className='contactInfop'>
 						<div className='boxContact' data-aos='fade-right'>
 							<div className='boxIcon'>
 								<FaMap className='fas' />
@@ -138,7 +136,7 @@ const Contact = () => {
 							</div>
 						</div>
 					</div>
-					<Box style={{ width: '50%' }}>
+					<Box>
 						{success && (
 							<Alert variant='success' onClose={() => setSuccess(false)}>
 								<h3 className='alert'>Message successfully delivered!</h3>
