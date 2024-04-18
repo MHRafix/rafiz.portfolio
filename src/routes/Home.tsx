@@ -1,13 +1,8 @@
 import { Anchor, Box, Group, Space } from '@mantine/core';
 import React from 'react';
+import { BiLogoFlutter } from 'react-icons/bi';
 import { HiDownload } from 'react-icons/hi';
-import {
-	SiGraphql,
-	SiMongodb,
-	SiNestjs,
-	SiNextdotjs,
-	SiTsnode,
-} from 'react-icons/si';
+import { SiGraphql, SiMongodb, SiNestjs, SiNextdotjs } from 'react-icons/si';
 import Me from '../Images/me.jpg';
 import useAnimation from '../hooks/useAnimation';
 import useLinkHandle from '../hooks/useLinkHandle';
@@ -55,16 +50,16 @@ const Home = () => {
 					height: '100vh',
 				}}
 			>
-				<div className='myImage' data-aos='fade-up'>
+				<div className='myImage' data-aos='fade-right'>
 					<img className='profilePic' src={Me} alt='MyProfileImage' />
 				</div>
 
 				<Space w={60} />
 
-				<div className='themeDetails' data-aos='fade-down'>
+				<div className='themeDetails' data-aos='fade-left'>
 					<h3 className='specialitis'>Hey,</h3>
 					<h1 className='nameHeading'>I'm Mehedi H. Rafiz</h1>
-					<h3 className='specialitis'>Full Stack Web Developer</h3>
+					<h3 className='specialitis'>Web Developer || App Developer</h3>
 
 					<Space h={'sm'} />
 
@@ -73,7 +68,7 @@ const Home = () => {
 							<SiNextdotjs size={20} color='white' /> &nbsp; NEXT JS
 						</div>
 						<div style={getStyle('rgb(255 239 1 / 45%)')}>
-							<SiTsnode size={20} color='#ffef01' /> &nbsp; TS
+							<BiLogoFlutter size={20} color='#00FFFF' /> &nbsp; FLUTTER
 						</div>
 						<div style={getStyle('rgb(175 34 34 / 67%)')}>
 							<SiNestjs size={20} color='crimson' /> &nbsp; NEST JS
@@ -90,8 +85,8 @@ const Home = () => {
 					<Space h={10} />
 
 					<p className='shortDesc'>
-						Trying to find a web developer,,,? Look no further, I'm your guy.
-						I'm a professional Full-Stack Web Application Developer.
+						Trying to find a web developer,,,? Look no further, I'm experienced
+						in Web Development also expert in Flutter Mobile App Development.
 					</p>
 
 					<button

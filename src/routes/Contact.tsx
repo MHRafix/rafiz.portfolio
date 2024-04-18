@@ -127,7 +127,7 @@ const Contact = () => {
 									className='boxIcon'
 									onClick={() =>
 										linkHandle(
-											'https://www.linkedin.com/in/mh-rafix-42772a21b/'
+											'https://www.linkedin.com/in/mehedi-h-rafiz-434b18266'
 										)
 									}
 								>
