@@ -599,6 +599,11 @@ Responsive css starts from here
 		padding: 10px;
 	}
 
+	.container_wrapper {
+		width: 90%;
+		margin: auto;
+	}
+
 	.grid_layout_btn {
 		display: grid;
 		gap: 10;
@@ -676,6 +681,11 @@ Responsive css starts from here
 		/* margin-bottom: 200px; */
 	}
 
+	.container_wrapper {
+		width: 95%;
+		margin: auto;
+	}
+
 	.grid_layout_btn {
 		display: grid;
 		gap: 10;
@@ -748,6 +758,11 @@ Responsive css starts from here
 		padding-left: 5%;
 		display: flex;
 		justify-content: space-between;
+	}
+
+	.container_wrapper {
+		width: 97%;
+		margin: auto;
 	}
 
 	.grid_layout_btn {
