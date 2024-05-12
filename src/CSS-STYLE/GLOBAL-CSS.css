@@ -59,6 +59,20 @@ html::-webkit-scrollbar-thumb {
 Header section css starts from here
 ***********************************/
 
+.grid_layout_btn {
+	display: flex;
+	gap: 10;
+}
+
+.single-project-carousel-image {
+	width: '90%';
+	border-radius: 10px;
+	margin: 'auto !important';
+	height: '420px';
+	object-fit: 'cover';
+	object-position: 'center';
+}
+
 .navLink {
 	color: white;
 	cursor: pointer;
@@ -585,6 +599,12 @@ Responsive css starts from here
 		padding: 10px;
 	}
 
+	.grid_layout_btn {
+		display: grid;
+		gap: 10;
+		grid-template-columns: repeat(1, 1fr);
+	}
+
 	header .header nav .navenus {
 		padding: 0% 5%;
 		display: flex;
@@ -612,6 +632,10 @@ Responsive css starts from here
 
 	span.specialitis {
 		font-size: 20px;
+	}
+
+	.single-project-wrapper {
+		width: 100%;
 	}
 
 	.skillBox .box span.skillName {
@@ -652,6 +676,11 @@ Responsive css starts from here
 		/* margin-bottom: 200px; */
 	}
 
+	.grid_layout_btn {
+		display: grid;
+		gap: 10;
+		grid-template-columns: repeat(1, 1fr);
+	}
 	.grid_layout {
 		display: grid;
 		gap: 15;
@@ -721,6 +750,11 @@ Responsive css starts from here
 		justify-content: space-between;
 	}
 
+	.grid_layout_btn {
+		display: grid;
+		gap: 10;
+		grid-template-columns: repeat(1, 1fr);
+	}
 	.myImage {
 		text-align: center;
 	}

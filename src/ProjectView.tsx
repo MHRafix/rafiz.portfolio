@@ -1,7 +1,12 @@
 import { Carousel } from '@mantine/carousel';
 import { Anchor, Box, Button, Loader, Paper, Space, Text } from '@mantine/core';
 import React, { useEffect, useState } from 'react';
-import { FaArrowLeft, FaExternalLinkAlt } from 'react-icons/fa';
+import {
+	FaArrowLeft,
+	FaArrowRight,
+	FaExternalLinkAlt,
+	FaGithub,
+} from 'react-icons/fa';
 import { useNavigate, useParams } from 'react-router-dom';
 import useLinkHandle from './hooks/useLinkHandle';
 
@@ -30,9 +35,9 @@ const ProjectView = () => {
 	return (
 		<div
 			className='container_wrapper'
-			style={{
-				overflow: 'hidden',
-			}}
+			// style={{
+			// 	overflow: 'hidden',
+			// }}
 		>
 			<Box id='home'>
 				<div
@@ -91,7 +96,11 @@ const ProjectView = () => {
 										shadow='lg'
 										ta={'center'}
 									>
-										<Carousel>
+										<Carousel
+											controlSize={70}
+											nextControlIcon={<FaArrowRight size={18} />}
+											previousControlIcon={<FaArrowLeft size={18} />}
+										>
 											<Carousel.Slide>
 												<img
 													src={project?.projectImg}
@@ -144,6 +153,10 @@ const ProjectView = () => {
 												margin: 'auto',
 											}}
 										>
+											<Text ta={'left'} fz={40} fw={700}>
+												Project Summaries:{' '}
+											</Text>
+
 											<Text ta={'left'} c={'white'} fz={25} fw={500}>
 												Reel Recruits, a pioneering project by Graphland,
 												redefines the traditional job portal experience by
@@ -156,35 +169,26 @@ const ProjectView = () => {
 
 											<Space h={'xl'} />
 
-											<div
-												style={{
-													display: 'flex',
-													gap: 10,
-													alignItems: 'center',
-													justifyContent: 'start',
-												}}
-											>
+											<div className='grid_layout_btn'>
 												<button
 													onClick={() => linkHandle(project?.liveLink)}
 													className='regularBtn'
 												>
-													Live Site &nbsp; <FaExternalLinkAlt size={16} />
+													Live &nbsp; <FaExternalLinkAlt size={16} />
 												</button>{' '}
 												&nbsp;&nbsp;
 												<button
 													onClick={() => linkHandle(project?.clientCodeLink)}
 													className='regularBtn'
 												>
-													Client Side Code &nbsp;{' '}
-													<FaExternalLinkAlt size={16} />
+													Frontend &nbsp; <FaGithub size={16} />
 												</button>
 												&nbsp;&nbsp;
 												<button
 													onClick={() => linkHandle(project?.serverCodeLink)}
 													className='regularBtn'
 												>
-													Server Side Code &nbsp;{' '}
-													<FaExternalLinkAlt size={16} />
+													Server &nbsp; <FaGithub size={16} />
 												</button>
 											</div>
 
@@ -193,7 +197,12 @@ const ProjectView = () => {
 											<Text ta={'left'} fz={40} fw={700}>
 												Technologies:{' '}
 											</Text>
-											<div className='skillTags'>
+											<div
+												className='skillTags'
+												style={{
+													textAlign: 'left',
+												}}
+											>
 												<span className='skillTag'>
 													{project?.technologies}
 												</span>
@@ -201,13 +210,23 @@ const ProjectView = () => {
 
 											<Space h={'xl'} />
 
+											<Text ta={'left'} fz={40} fw={700}>
+												Description:{' '}
+											</Text>
+
+											{/* <Space h={'xl'} /> */}
+
 											<Text
+												ta={'left'}
+												fz={27}
+												c={'white'}
 												dangerouslySetInnerHTML={{
-													__html: project?.projectDesc,
+													__html: `<div>${project?.projectDesc}</div>`,
 												}}
 											></Text>
 										</div>
 									</Paper>
+									<Space h={80} />
 								</div>
 							</Box>
 						) : (
@@ -242,8 +261,6 @@ const ProjectView = () => {
 						)}
 					</>
 				)}
-
-				<Space h={80} />
 			</Box>
 		</div>
 	);
