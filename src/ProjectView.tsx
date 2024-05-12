@@ -158,41 +158,41 @@ const ProjectView = () => {
 											</Text>
 
 											<Text ta={'left'} c={'white'} fz={25} fw={500}>
-												Reel Recruits, a pioneering project by Graphland,
-												redefines the traditional job portal experience by
-												placing video interviews at its core. Unlike typical job
-												portal websites, Reel Recruits introduces an innovative
-												method for job seekers to apply using their webcams. The
-												focal point of the platform is the seamless integration
-												of video interviews into the application process.
+												{project?.projectType}
 											</Text>
 
 											<Space h={'xl'} />
 
 											<div className='grid_layout_btn'>
-												<button
-													onClick={() => linkHandle(project?.liveLink)}
-													className='regularBtn'
-												>
-													Live &nbsp; <FaExternalLinkAlt size={16} />
-												</button>{' '}
+												{project?.liveLink && (
+													<button
+														onClick={() => linkHandle(project?.liveLink)}
+														className='regularBtn'
+													>
+														Live &nbsp; <FaExternalLinkAlt size={16} />
+													</button>
+												)}{' '}
 												&nbsp;&nbsp;
-												<button
-													onClick={() => linkHandle(project?.clientCodeLink)}
-													className='regularBtn'
-												>
-													Frontend &nbsp; <FaGithub size={16} />
-												</button>
+												{project?.clientCodeLink && (
+													<button
+														onClick={() => linkHandle(project?.clientCodeLink)}
+														className='regularBtn'
+													>
+														Frontend &nbsp; <FaGithub size={16} />
+													</button>
+												)}
 												&nbsp;&nbsp;
-												<button
-													onClick={() => linkHandle(project?.serverCodeLink)}
-													className='regularBtn'
-												>
-													Server &nbsp; <FaGithub size={16} />
-												</button>
+												{project?.serverCodeLink && (
+													<button
+														onClick={() => linkHandle(project?.serverCodeLink)}
+														className='regularBtn'
+													>
+														Server &nbsp; <FaGithub size={16} />
+													</button>
+												)}
 											</div>
 
-											<Space h={'xl'} />
+											{/* <Space h={'xl'} />
 
 											<Text ta={'left'} fz={40} fw={700}>
 												Technologies:{' '}
@@ -206,12 +206,12 @@ const ProjectView = () => {
 												<span className='skillTag'>
 													{project?.technologies}
 												</span>
-											</div>
+											</div> */}
 
 											<Space h={'xl'} />
 
 											<Text ta={'left'} fz={40} fw={700}>
-												Description:{' '}
+												Project Description:{' '}
 											</Text>
 
 											{/* <Space h={'xl'} /> */}
