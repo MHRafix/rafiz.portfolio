@@ -46,7 +46,7 @@ const Home = () => {
 				className='flex_layout'
 				style={{
 					margin: 'auto',
-					width: '90%',
+					width: '100%',
 					height: '100vh',
 				}}
 			>
