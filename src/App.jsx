@@ -21,6 +21,7 @@ function App() {
 			<Space h={100} />
 
 			<Contact />
+
 			<Space h={100} />
 		</div>
 	);

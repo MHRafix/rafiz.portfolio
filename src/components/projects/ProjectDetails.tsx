@@ -1,7 +1,9 @@
-import { Carousel } from '@mantine/carousel';
 import '@mantine/carousel/styles.css';
-import { Modal } from '@mantine/core';
+import { Space } from '@mantine/core';
 import React, { useState } from 'react';
+import { FaExternalLinkAlt } from 'react-icons/fa';
+import { HiOutlineBookOpen } from 'react-icons/hi';
+import { useNavigate } from 'react-router-dom';
 import useAnimation from '../../hooks/useAnimation';
 import useLinkHandle from '../../hooks/useLinkHandle';
 
@@ -20,14 +22,17 @@ const Project = ({ project, no }) => {
 		clientCodeLink,
 		serverCodeLink,
 		technologies,
+		_id,
 	} = project;
 
 	// Import use link here
 	const { linkHandle } = useLinkHandle();
 
+	const navigate = useNavigate();
+
 	// Handle read more button
 	const handleReadMore = (_id) => {
-		setModal(true);
+		navigate(`/project-view/${_id}`);
 	};
 
 	// Import AOS animation here
@@ -35,7 +40,7 @@ const Project = ({ project, no }) => {
 
 	return (
 		<div>
-			<Modal
+			{/* <Modal
 				opened={modal}
 				onClose={() => setModal(false)}
 				// dialogClassName='modal-90w'
@@ -104,26 +109,38 @@ const Project = ({ project, no }) => {
 						</div>
 					</div>
 				</div>
-			</Modal>
-			<div>
-				<div className='projectsBox' data-aos='flip-left'>
-					<div className='projectThumbnail'>
-						<img src={projectImg} alt='projectsImage' />
-					</div>
-					<div className='projectInfo'>
-						<h3 className='projectCountNo'>Project &nbsp; 0{no}</h3>
-						<span className='projectType'>{projectType} Project</span>
-						<div className='btns'>
-							<button
-								onClick={() => linkHandle(liveLink)}
-								className='regularBtn'
-							>
-								Live <span className='icon far fa-eye'></span>
-							</button>
-							<button onClick={handleReadMore} className='regularBtn'>
-								Read More <span className='icon fas fa-redo'></span>
-							</button>
-						</div>
+			</Modal> */}
+			<div
+				className='projectsBox'
+				style={{
+					overflow: 'hidden',
+					margin: 10,
+				}}
+				data-aos='flip-left'
+			>
+				<div className='projectThumbnail'>
+					<img src={projectImg} alt='projectsImage' />
+				</div>
+				<div className='projectInfo'>
+					{/* <h3 className='projectCountNo'>Project &nbsp; 0{no}</h3> */}
+					<span className='projectType'>{projectType} Project</span>
+
+					<Space h={'md'} />
+
+					<div
+						style={{
+							display: 'flex',
+							gap: 10,
+							alignItems: 'center',
+							justifyContent: 'center',
+						}}
+					>
+						<button onClick={() => linkHandle(liveLink)} className='regularBtn'>
+							Live &nbsp; <FaExternalLinkAlt size={16} />
+						</button>
+						<button onClick={() => handleReadMore(_id)} className='regularBtn'>
+							Read More &nbsp; <HiOutlineBookOpen size={22} />
+						</button>
 					</div>
 				</div>
 			</div>

@@ -98,7 +98,7 @@ const Contact = () => {
 								<span className='addressFieldText'>+880 1611859722</span>
 							</div>
 						</div>
-						<div className='boxContact text-center w-100'>
+						<div className='boxContact text-center w-100' data-aos='fade-right'>
 							<div
 								className='socialIcons'
 								style={{
@@ -107,7 +107,6 @@ const Contact = () => {
 									alignItems: 'center',
 									gap: 10,
 								}}
-								data-aos='fade-right'
 							>
 								<div
 									className='boxIcon'
