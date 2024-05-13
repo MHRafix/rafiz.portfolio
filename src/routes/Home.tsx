@@ -46,7 +46,6 @@ const Home = () => {
 					alignItems: 'center',
 					justifyContent: 'space-between',
 					// padding: '25px 0px',
-					marginBottom: 20,
 					height: 80,
 				}}
 			>
@@ -157,8 +156,6 @@ const Home = () => {
 				</div>
 			</Drawer>
 
-			<Space h={'xl'} />
-
 			<Box
 				className='flex_layout'
 				style={{
@@ -197,6 +194,7 @@ const Home = () => {
 							<SiMongodb size={20} color='#12B886' /> &nbsp; MONGO DB
 						</div>
 					</Group>
+
 					<Space h={'xs'} />
 
 					<Space h={10} />
