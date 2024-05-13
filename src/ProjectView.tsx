@@ -1,12 +1,26 @@
 import { Carousel } from '@mantine/carousel';
-import { Anchor, Box, Button, Loader, Paper, Space, Text } from '@mantine/core';
+import {
+	ActionIcon,
+	Anchor,
+	Box,
+	Button,
+	Drawer,
+	Loader,
+	Paper,
+	Space,
+	Text,
+} from '@mantine/core';
+import { useDisclosure } from '@mantine/hooks';
 import React, { useEffect, useState } from 'react';
 import {
 	FaArrowLeft,
 	FaArrowRight,
 	FaExternalLinkAlt,
 	FaGithub,
+	FaTimes,
 } from 'react-icons/fa';
+import { HiMenu } from 'react-icons/hi';
+import { SiUpwork } from 'react-icons/si';
 import { useNavigate, useParams } from 'react-router-dom';
 import useLinkHandle from './hooks/useLinkHandle';
 
@@ -14,6 +28,7 @@ const ProjectView = () => {
 	const { projectId } = useParams();
 	const [project, setProject] = useState<any>();
 	const [getting, setGetting] = useState(false);
+	const [opened, handler] = useDisclosure();
 
 	useEffect(() => {
 		setGetting(true);
@@ -44,25 +59,118 @@ const ProjectView = () => {
 					style={{
 						display: 'flex',
 						alignItems: 'center',
-						justifyContent: 'center',
-						padding: '25px 0px',
-						gap: 50,
+						justifyContent: 'space-between',
+						// padding: '25px 0px',
 						marginBottom: 20,
+						height: 80,
 					}}
 				>
-					<Anchor href='/#home' className='navLink'>
-						<div>Home</div>
-					</Anchor>
-					<Anchor href='/#about_us' className='navLink'>
-						<div className='navLink'>About</div>
-					</Anchor>
-					<Anchor href='/#projects' className='navLink'>
-						<div className='navLink'>Projects</div>
-					</Anchor>
-					<Anchor href='/#contact' className='navLink'>
-						<div className='navLink'>Contact</div>
-					</Anchor>
+					<Text fz={50} fw={800}>
+						Mehedi H. Rafiz
+					</Text>
+					<div
+						style={{
+							display: 'flex',
+							alignItems: 'center',
+							justifyContent: 'center',
+							padding: '25px 0px',
+							gap: 50,
+						}}
+						className='toggle_able_menus'
+					>
+						<Anchor href='/#home' className='navLink'>
+							<div>Home</div>
+						</Anchor>
+						<Anchor href='/#about_us' className='navLink'>
+							<div className='navLink'>About</div>
+						</Anchor>
+						<Anchor href='/#projects' className='navLink'>
+							<div className='navLink'>Projects</div>
+						</Anchor>
+						<Anchor href='/#contact' className='navLink'>
+							<div className='navLink'>Contact</div>
+						</Anchor>
+						<Button
+							leftSection={<SiUpwork size={18} />}
+							color='teal'
+							size='xl'
+							fz={25}
+							onClick={() =>
+								linkHandle(
+									'https://www.upwork.com/freelancers/~01dcb2c17ef6544290'
+								)
+							}
+						>
+							Hire Me
+						</Button>
+					</div>
+
+					{/* <ActionIcon
+					color='gray'
+					variant='subtle'
+					size={70}
+					p={1}
+				>
+					</ActionIcon> */}
+					<HiMenu
+						onClick={() => handler.open()}
+						className='toggle_btn'
+						color='white'
+						size={50}
+					/>
 				</div>
+
+				<Drawer
+					position='right'
+					size={'lg'}
+					opened={opened}
+					onClose={handler.close}
+					style={{
+						backgroundColor: 'red !important',
+					}}
+					closeButtonProps={{
+						iconSize: 'xl',
+						children: (
+							<ActionIcon color='grey' size={'xl'} variant='subtle'>
+								<FaTimes size={20} />
+							</ActionIcon>
+						),
+					}}
+				>
+					<div
+						style={{
+							display: 'grid',
+							padding: '25px 0px 0px 20px',
+							gap: 20,
+						}}
+					>
+						<Anchor href='/#home' className='navLink'>
+							<div>Home</div>
+						</Anchor>
+						<Anchor href='/#about_us' className='navLink'>
+							<div className='navLink'>About</div>
+						</Anchor>
+						<Anchor href='/#projects' className='navLink'>
+							<div className='navLink'>Projects</div>
+						</Anchor>
+						<Anchor href='/#contact' className='navLink'>
+							<div className='navLink'>Contact</div>
+						</Anchor>
+						<Button
+							leftSection={<SiUpwork size={18} />}
+							color='teal'
+							size='xl'
+							fz={25}
+							onClick={() =>
+								linkHandle(
+									'https://www.upwork.com/freelancers/~01dcb2c17ef6544290'
+								)
+							}
+						>
+							Hire Me
+						</Button>
+					</div>
+				</Drawer>
 				{getting ? (
 					<div
 						style={{

@@ -1,19 +1,40 @@
-import { Anchor, Box, Group, Space } from '@mantine/core';
+import {
+	ActionIcon,
+	Anchor,
+	Box,
+	Button,
+	Drawer,
+	Group,
+	Space,
+	Text,
+} from '@mantine/core';
+import { useDisclosure } from '@mantine/hooks';
 import React from 'react';
 import { BiLogoFlutter } from 'react-icons/bi';
-import { HiDownload } from 'react-icons/hi';
-import { SiGraphql, SiMongodb, SiNestjs, SiNextdotjs } from 'react-icons/si';
+import { FaTimes } from 'react-icons/fa';
+import { HiDownload, HiMenu } from 'react-icons/hi';
+import {
+	SiGraphql,
+	SiMongodb,
+	SiNestjs,
+	SiNextdotjs,
+	SiUpwork,
+} from 'react-icons/si';
 import Me from '../Images/me.jpg';
 import useAnimation from '../hooks/useAnimation';
 import useLinkHandle from '../hooks/useLinkHandle';
 
 const Home = () => {
+	// const [isMenuOpen, setIsMenuOpen] = useState(false);
+	const [opened, handler] = useDisclosure();
+
 	// My Resume Link
 	const myResumeLink =
 		'https://drive.google.com/file/d/1w1Lg6XQ7H8RBr49vt0XaleCgL9lgBdSj/view?usp=sharing';
 
 	// Import use link here
 	const { linkHandle } = useLinkHandle();
+
 	// Import AOS animation here
 	useAnimation();
 
@@ -23,25 +44,121 @@ const Home = () => {
 				style={{
 					display: 'flex',
 					alignItems: 'center',
-					justifyContent: 'center',
-					padding: '25px 0px',
-					gap: 50,
+					justifyContent: 'space-between',
+					// padding: '25px 0px',
 					marginBottom: 20,
+					height: 80,
 				}}
 			>
-				<Anchor href='#home' className='navLink'>
-					<div>Home</div>
-				</Anchor>
-				<Anchor href='#about_us' className='navLink'>
-					<div className='navLink'>About</div>
-				</Anchor>
-				<Anchor href='#projects' className='navLink'>
-					<div className='navLink'>Projects</div>
-				</Anchor>
-				<Anchor href='#contact' className='navLink'>
-					<div className='navLink'>Contact</div>
-				</Anchor>
+				<Text fz={50} fw={800}>
+					Mehedi H. Rafiz
+				</Text>
+				<div
+					style={{
+						display: 'flex',
+						alignItems: 'center',
+						justifyContent: 'center',
+						padding: '25px 0px',
+						gap: 50,
+					}}
+					className='toggle_able_menus'
+				>
+					<Anchor href='#home' className='navLink'>
+						<div>Home</div>
+					</Anchor>
+					<Anchor href='#about_us' className='navLink'>
+						<div className='navLink'>About</div>
+					</Anchor>
+					<Anchor href='#projects' className='navLink'>
+						<div className='navLink'>Projects</div>
+					</Anchor>
+					<Anchor href='#contact' className='navLink'>
+						<div className='navLink'>Contact</div>
+					</Anchor>
+					<Button
+						leftSection={<SiUpwork size={18} />}
+						color='teal'
+						size='xl'
+						fz={25}
+						onClick={() =>
+							linkHandle(
+								'https://www.upwork.com/freelancers/~01dcb2c17ef6544290'
+							)
+						}
+					>
+						Hire Me
+					</Button>
+				</div>
+
+				{/* <ActionIcon
+					color='gray'
+					variant='subtle'
+					size={70}
+					p={1}
+				>
+					</ActionIcon> */}
+				<HiMenu
+					onClick={() => handler.open()}
+					className='toggle_btn'
+					color='white'
+					size={50}
+				/>
 			</div>
+
+			<Drawer
+				position='right'
+				size={'lg'}
+				opened={opened}
+				onClose={handler.close}
+				style={{
+					backgroundColor: 'red !important',
+				}}
+				closeButtonProps={{
+					iconSize: 'xl',
+					children: (
+						<ActionIcon color='grey' size={'xl'} variant='subtle'>
+							<FaTimes size={20} />
+						</ActionIcon>
+					),
+				}}
+			>
+				<div
+					style={{
+						display: 'grid',
+						padding: '25px 0px 0px 20px',
+						gap: 20,
+					}}
+				>
+					<Anchor href='#home' className='navLink'>
+						<div>Home</div>
+					</Anchor>
+					<Anchor href='#about_us' className='navLink'>
+						<div className='navLink'>About</div>
+					</Anchor>
+					<Anchor href='#projects' className='navLink'>
+						<div className='navLink'>Projects</div>
+					</Anchor>
+					<Anchor href='#contact' className='navLink'>
+						<div className='navLink'>Contact</div>
+					</Anchor>
+					<Button
+						leftSection={<SiUpwork size={18} />}
+						color='teal'
+						size='xl'
+						fz={25}
+						onClick={() =>
+							linkHandle(
+								'https://www.upwork.com/freelancers/~01dcb2c17ef6544290'
+							)
+						}
+					>
+						Hire Me
+					</Button>
+				</div>
+			</Drawer>
+
+			<Space h={'xl'} />
+
 			<Box
 				className='flex_layout'
 				style={{
@@ -67,11 +184,11 @@ const Home = () => {
 						<div style={getStyle('rgb(238 238 238 / 49%)')}>
 							<SiNextdotjs size={20} color='white' /> &nbsp; NEXT JS
 						</div>
-						<div style={getStyle('rgb(255 239 1 / 45%)')}>
-							<BiLogoFlutter size={20} color='#00FFFF' /> &nbsp; FLUTTER
-						</div>
 						<div style={getStyle('rgb(175 34 34 / 67%)')}>
 							<SiNestjs size={20} color='crimson' /> &nbsp; NEST JS
+						</div>
+						<div style={getStyle('rgb(255 239 1 / 45%)')}>
+							<BiLogoFlutter size={20} color='#00FFFF' /> &nbsp; FLUTTER
 						</div>
 						<div style={getStyle('rgb(175 34 34 / 67%)')}>
 							<SiGraphql size={20} color='crimson' /> &nbsp; GRAPHQL
