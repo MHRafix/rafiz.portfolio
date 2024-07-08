@@ -30,7 +30,7 @@ const Home = () => {
 
 	// My Resume Link
 	const myResumeLink =
-		'https://drive.google.com/file/d/1w1Lg6XQ7H8RBr49vt0XaleCgL9lgBdSj/view?usp=sharing';
+		'https://drive.google.com/file/d/1KYVpJzxXq1RZfgzrAxTyVPCJc9RVTppS/view?usp=sharing';
 
 	// Import use link here
 	const { linkHandle } = useLinkHandle();
