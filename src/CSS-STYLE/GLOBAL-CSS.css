@@ -156,15 +156,21 @@ section.section .sectionWrapper {
 	padding: 7% 0%;
 }
 
+.hero-box {
+	margin: auto;
+	width: 80%;
+	height: 100vh;
+}
+
 .myImage img.profilePic {
-	width: 320px;
-	height: 320px;
+	width: 500px;
+	height: 500px;
 	object-fit: cover;
 	border-radius: 10px;
 }
 
 .themeDetails h1.nameHeading {
-	font-size: 30px;
+	font-size: 40px;
 	font-weight: 800;
 	color: var(--white-color);
 	line-height: 35px;
@@ -323,7 +329,7 @@ div.boxIcon {
 
 span.specialitis {
 	color: var(--white-color);
-	font-size: 30px;
+	font-size: 18px;
 	font-weight: 500;
 }
 
@@ -561,7 +567,7 @@ img.d-block.w-100 {
 }
 
 .projectDetails h3.specialitis {
-	font-size: 30px;
+	font-size: 18px;
 	font-weight: 700;
 	letter-spacing: 1px;
 }
@@ -669,7 +675,7 @@ Responsive css starts from here
 	}
 
 	span.specialitis {
-		font-size: 20px;
+		font-size: 18px;
 	}
 
 	.single-project-wrapper {
@@ -725,6 +731,12 @@ Responsive css starts from here
 	.container_wrapper {
 		width: 95%;
 		margin: auto;
+	}
+
+	.hero-box {
+		margin: auto;
+		width: 100%;
+		height: 100vh;
 	}
 
 	.myImage img.profilePic {
@@ -831,7 +843,7 @@ Responsive css starts from here
 	}
 
 	.myImage img.profilePic {
-		width: 80%;
+		width: 320px !important;
 		height: 320px;
 		border-radius: 10px;
 		margin-bottom: 20px;
@@ -847,7 +859,7 @@ Responsive css starts from here
 	}
 
 	.themeDetails h1.nameHeading {
-		font-size: 40px;
+		font-size: 30px;
 		font-weight: 700;
 		color: var(--white-color);
 		line-height: 35px;

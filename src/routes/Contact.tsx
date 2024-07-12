@@ -95,7 +95,7 @@ const Contact = () => {
 							</div>
 							<div className='icon'>
 								<span className='addressField'>Cell</span> <br />
-								<span className='addressFieldText'>+880 1611859722</span>
+								<span className='addressFieldText'>+880 1600221211</span>
 							</div>
 						</div>
 						<div className='boxContact text-center w-100' data-aos='fade-right'>

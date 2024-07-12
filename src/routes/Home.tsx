@@ -156,19 +156,12 @@ const Home = () => {
 				</div>
 			</Drawer>
 
-			<Box
-				className='flex_layout'
-				style={{
-					margin: 'auto',
-					width: '100%',
-					height: '100vh',
-				}}
-			>
+			<Box className='flex_layout hero-box'>
 				<div className='myImage' data-aos='fade-right'>
 					<img className='profilePic' src={Me} alt='MyProfileImage' />
 				</div>
 
-				<Space w={60} />
+				<Space w={100} />
 
 				<div className='themeDetails' data-aos='fade-left'>
 					<h3 className='specialitis'>Hey,</h3>
