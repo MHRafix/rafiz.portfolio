@@ -164,7 +164,7 @@ section.section .sectionWrapper {
 
 .myImage img.profilePic {
 	width: 500px;
-	height: 500px;
+	height: 600px;
 	object-fit: cover;
 	border-radius: 10px;
 }
